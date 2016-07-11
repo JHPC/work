@@ -1,0 +1,15 @@
+<div class="container">
+  
+     <h1 style="margin-top:20px; text-align: center;">댓글 수정 페이지</h1>
+  
+     <form action="/home/reply_update_real/<%=@post.id%>" method="post">
+  
+        <div class="form-group">
+        <label for="reply_content">댓 글</label>
+        <textarea class="form-control" rows="5" name="reply_content"
+        placeholder="댓글을 입력하세요." style="resize:none;"><%=@post.reply_write%></textarea>
+      </div>
+ 
+      <center> <button type="submit" class="btn btn-default">Submit</button> </center>
+    </form>
+  </div>
