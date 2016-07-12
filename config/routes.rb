@@ -15,12 +15,13 @@ Rails.application.routes.draw do
   post  "home/update_real/:my_id" => "home#update_real"
   
   post "home/reply_write"
+    
+  post "home/reply_update_real/:my_id" => "home#reply_update_real"
   
-  post "home/reply_update_real:my_id" => "home#reply_update_real"
+  get "home/reply_update_view/:my_id" => "home#reply_update_view"
   
-  post "home/reply_update_view:my_id" => "home#reply_update_view"
-  
-  post "home/reply_destroy:my_id" => "home#reply_destroy"
+  get "home/reply_destroy/:my_id" => "home#reply_destroy"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -3,12 +3,15 @@ class HomeController < ApplicationController
   end
 
   def write
+    
     post = Post.new
     post.title_db = params[:title]
     post.content_db = params[:content]
     post.save
  	
     redirect_to "/home/list"
+    
+    
   end
 
   def list
@@ -44,13 +47,13 @@ end
   end
   
    def reply_update_view
-    @post = Post.find(params[:my_id])
+    @post = Reply.find(params[:my_id])
   
   end
   
    def reply_update_real
-    @post = Post.find(params[:my_id])
-    @post.content_db = params[:reply_content]
+    @post = Reply.find(params[:my_id])
+    @post.reply_write = params[:reply_content]
     @post.save
     
         redirect_to "/home/list"
@@ -58,8 +61,8 @@ end
   end
   
   def reply_destroy
-    @post = Post.find(params[:my_id])
-    @post.reply_destroyre
+    @post = Reply.find(params[:my_id])
+    @post.destroy
     
         redirect_to "/home/list"
 
