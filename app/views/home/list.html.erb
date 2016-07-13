@@ -9,8 +9,8 @@
                            <p style="text-align:right; margin-right:1%;">
 	       <a href="/home/update_view/<%= p.id %>">[수정]</a>
                <a href="/home/destroy/<%= p.id %>"> [삭제] </a>
-               <h3>내용의 글자수 <%=p.content_db.length%> 공백제외 <%=(p.content_db.length)-(p.content_db.count" ")%>
-        단어수 <%=(p.content_db.count" ")+1 %> 공백 <%=p.content_db.count" " %></h3>
+               <h3>공백 포함 글자수 <%=p.content_db.length%> 공백 미포함 <%=(p.content_db.length)-(p.content_db.count" ")%>
+        단어 개수 <%=(p.content_db.count" ")+1 %> 공백 <%=p.content_db.count" " %></h3>
            
      
 
